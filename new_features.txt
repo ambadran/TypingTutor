@@ -1,0 +1,15 @@
+X 1 - add menubar to change whether we want to type random characters only, with numbers or with numbers and symbols, or easy normal words or hard normal words
+/ 2 - program remembers what you paragraph options you were using after closing the program
+/ 3 - backspace retrieves words ***
+X 3 - test module
+/ 4 - windows maximized when opened
+X 6 - show button toggled when two consecutive mistakes
+X 7 - new user frame is now a popup frame
+X 8 - help bar instead of button
+/ 9 - message to tell you that you've finished your paragraph
+X 10 - high score always one screen and updated automatically
+
+
+
+bugs:
+X 1 - can't correct the first character of a word if a space is pressed + the program screws up
