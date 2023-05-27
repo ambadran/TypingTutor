@@ -43,7 +43,7 @@ try:
     open(f"{os.getcwd()}/typingProgram_memory.txt").close()
     mem_file_path = f"{os.getcwd()}/typingProgram_memory.txt"
 except FileNotFoundError:
-    open(f"{os.getcwd()}/src/TypingTutor/typingProgram_memory.txt", 'w').close()
+    open(f"{os.getcwd()}/src/TypingTutor/typingProgram_memory.txt").close()
     mem_file_path = f"{os.getcwd()}/src/TypingTutor/typingProgram_memory.txt"
 
 
@@ -51,10 +51,14 @@ with open(mem_file_path, 'r') as f:
 
     memory = f.read(4)
 
-    if memory[0] == "1":
-        startup_bool = 1
-    elif memory[0] == "0":
+    if memory:
+        if memory[0] == "1":
+            startup_bool = 1
+        elif memory[0] == "0":
+            startup_bool = 0
+    else:
         startup_bool = 0
+
 
 class GUI:
 
@@ -269,7 +273,6 @@ automatically generated along the typing.
             self.show_label.config(text=f"word: {engine.paragraph_list[self.word_num]}\nrow: {x+1}\ncolumn: {z}")
         except IndexError:
             self.check_label.config(text="You've finished this paragraph!", font="Ariel 45", fg='black')
-
 
     def instantanious_check(self, test):
         if self.First_char_entered == False:
